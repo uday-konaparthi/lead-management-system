@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: ['http://localhost:5173', 'https://69mtdsrp-5173.inc1.devtunnels.ms'],
+    origin: "https://lead-management-system-theta.vercel.app",
     credentials: true, 
   })
 );
