@@ -15,11 +15,26 @@ import ErrorPage from "./pages/404-page";
 
 function App() {
   const user = useSelector((state) => state.user.user);
-  const navigate = useNavigate()
+  const leadsData = useSelector((state) => state.leads?.leads);
+  const navigate = useNavigate();
+
+  const handleSeeding = async () => {
+    await fetch(`${import.meta.env.VITE_API_URL}/api/leads/seed`, {
+      method: "POST",
+      credentials: "include",
+    });
+    window.location.reload();
+  };
 
   useEffect(() => {
-    if(user == null) navigate('/login')
-  }, [user])
+    if (user == null) navigate("/login");
+  }, [user]);
+
+  useEffect(() => {
+    if (leadsData?.total == 0) {
+      handleSeeding();
+    }
+  }, [leadsData]);
 
   const isAuthPage =
     location.pathname === "/login" || location.pathname === "/register";

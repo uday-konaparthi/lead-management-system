@@ -49,7 +49,7 @@ const Navbar = () => {
                 });
                 window.location.reload();
               }}
-              className="btn btn-outline btn-secondary mr-2"
+              className="btn btn-outline btn-secondary md:mr-2"
             >
               Seed Demo Leads
             </button>
