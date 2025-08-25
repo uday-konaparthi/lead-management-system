@@ -11,12 +11,16 @@ const leadRoutes = require('./src/routes/lead');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(
-  cors({
-    origin: ["https://lead-management-system-theta.vercel.app", "https://lead-management-system-2hy2aja1g-uday-konaparthi-s-projects.vercel.app"],
-    credentials: true, 
-  })
-);
+const corsOptions = {
+  origin: [
+    "https://lead-management-system-theta.vercel.app",
+    "https://lead-management-system-2hy2aja1g-uday-konaparthi-s-projects.vercel.app",
+  ],
+  credentials: true,
+  optionsSuccessStatus: 200, 
+};
+
+app.use(cors(corsOptions));
 
 app.use(cookieParser());
 app.use(express.json());
