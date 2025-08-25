@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: "https://lead-management-system-theta.vercel.app",
+    origin: ["https://lead-management-system-theta.vercel.app", "https://lead-management-system-2hy2aja1g-uday-konaparthi-s-projects.vercel.app"],
     credentials: true, 
   })
 );
