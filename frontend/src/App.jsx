@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Dashboard from "./pages/dashboard";
 import Leads from "./pages/leads";
 import LeadEdit from "./pages/leadEdit";
@@ -15,6 +15,11 @@ import ErrorPage from "./pages/404-page";
 
 function App() {
   const user = useSelector((state) => state.user.user);
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if(user == null) navigate('/login')
+  }, [user])
 
   const isAuthPage =
     location.pathname === "/login" || location.pathname === "/register";
