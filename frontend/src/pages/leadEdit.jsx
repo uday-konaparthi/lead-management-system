@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
 
 //fetch lead by id api endpoints

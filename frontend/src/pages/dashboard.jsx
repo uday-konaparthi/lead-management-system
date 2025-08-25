@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import DashboardCards from "../components/DashboardCards";
+import DashboardCards from "../components/dashboardCards";
 import LeadStatusChart from "../components/LeadStatusChart";
 import RecentActivity from "../components/RecentActivity";
 import { useDispatch, useSelector } from "react-redux";
